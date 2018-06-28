@@ -1,6 +1,4 @@
 from flask import Flask, render_template, request, Response, send_file
-from flask.ext.sqlalchemy import SQLAlchemy
-from sqlalchemy.sql import func
 from werkzeug import secure_filename
 import pandas
 from geopy.geocoders import Nominatim
