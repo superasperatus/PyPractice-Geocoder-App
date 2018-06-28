@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+
+<html lang="eng">
+
+  <title> Data collector app </title>
+
+  <head>
+    <link href="../static/main.css" rel="stylesheet">
+  </head>
+
+    <body>
+      <div class="container">
+          <h1> Geo-Coding your addresses </h1>
+          <h3> Please attach a file that contains your addresses </h3>
+          <div class="message">
+            {{text | safe}}
+          </div>
+          <form action="{{url_for('processed_data')}}" method="POST" enctype="multipart/form-data"> <!--  #this method form posts the results to the server... the curly brackets are here so the Flask app can launch the success template  -->
+            <input type="file" name="file" > <br>
+            <button type="submit"> Submit </button>
+          </form>
+          </div>
+
+    </body>
+
+</html>

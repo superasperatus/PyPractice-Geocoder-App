@@ -1,0 +1,6 @@
+1. build a user interface via flask 
+2. build a backend with Postgre
+
+app expects a file that includes an address .... user uploads the file via submit button. And once the user uploads the file the file will read the file and will add lattitue and longitude (with pandas) columns and it will present the table. and finally the user needs to download the presented data file. 
+
+if user doesnt upload the good file the message should be: "Please make sure you have an address column in your CSV file." 
