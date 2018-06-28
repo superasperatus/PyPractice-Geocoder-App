@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, Response, send_file
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 from werkzeug import secure_filename
+import pandas
+from geopy.geocoders import Nominatim
 import os
 
 
@@ -39,12 +41,18 @@ def processed_data():
     if request.method=='POST':
        file=request.files["file"]
        file.save(secure_filename("uploaded"+file.filename))
+    nom=Nominatim(scheme="http")
+    df=pandas.read_csv("uploaded"+file.filename)
+    df["Coordinates"]=df["Address"].apply(nom.geocode)
+    df["Latitude"]=df["Coordinates"].apply(lambda x: x.latitude if x != None else None)
+    df["Longitude"]=df["Coordinates"].apply(lambda x: x.longitude if x != None else None)
+    df.drop("Coordinates", axis=1, inplace=True)
+
     return render_template("success.html")
 
 @app.route("/download", methods=['POST', 'GET'])
 def download():
     return send_file("uploaded"+file.filename, attachment_filename="processed-file.csv", as_attachment=True)
-
 
 if __name__=='__main__':
     app.debug=True
