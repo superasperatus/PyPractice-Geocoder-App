@@ -40,9 +40,9 @@ def processed_data():
     global file
     if request.method=='POST':
        file=request.files["file"]
-       file.save(secure_filename("uploaded"+file.filename))
+       #file.save(secure_filename("uploaded"+file.filename))
     nom=Nominatim(scheme="http")
-    df=pandas.read_csv("uploaded"+file.filename)
+    df=pandas.read_csv(file)
     df["Coordinates"]=df["Address"].apply(nom.geocode)
     df["Latitude"]=df["Coordinates"].apply(lambda x: x.latitude if x != None else None)
     df["Longitude"]=df["Coordinates"].apply(lambda x: x.longitude if x != None else None)
@@ -52,7 +52,7 @@ def processed_data():
 
 @app.route("/download", methods=['POST', 'GET'])
 def download():
-    return send_file("uploaded"+file.filename, attachment_filename="processed-file.csv", as_attachment=True)
+    return send_file(file, attachment_filename="processed-file.csv", as_attachment=True)
 
 if __name__=='__main__':
     app.debug=True
