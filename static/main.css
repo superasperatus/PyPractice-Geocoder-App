@@ -1,32 +1,47 @@
 html, body {
   height: 100%;
   margin: 0;
+  font-family: Tahoma, Geneva, sans-serif;
+  color: black;
+  background-color: #f4f4f4
+
 }
 
 .container {
   margin: 0 auto;
   width: 100%;
   height:100%;
-  background-color: #006666;
-  color: #e6ffff;
   overflow:hidden;
   text-align: center;
 }
 
 .container h1 {
-  font-family: Arial, sans-serif;
   font-size: 30px;
-  color: #DDCCEE;
   margin-top: 80px;
 }
 
+.container h2 {
+  font-size: 20px;
+  padding-top: 15px;
+
+}
+
+.container h3 {
+  padding-top: 25px;
+  font-size: 15px;
+  text-align: center;
+
+  margin-bottom: 0px;
+}
+
+
 .container form {
-  margin: 20px;
+  margin: 25px;
 }
 
 .container input {
   width: 350px;
-  height: 15px;
+  height: 35px;
   font-size: 15px;
   margin: 2px;
   padding: 20px;
@@ -34,30 +49,56 @@ html, body {
 }
 
 .container button {
-  width:70px;
-  height: 30px;
-  background-color: steelblue;
-  margin: 3px;
+  background-color: #0066ff;
+  border: 1px solid black;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  cursor: pointer;
 }
 
 .container p {
-    padding-top: 55px;
-    margin: 40px;
+  padding-top: 55px;
+  margin: 40px;
+  font-size: 20px;
+}
+
+.container #notes {
+  padding-top: 5px;
+  margin: 5px;
+  font-size: 15px;
 }
 
 .message {
-  font-family: Arial, sans-serif;
   font-size: 15px;
-  color: #ff9999
 }
 
+
 #download-button {
-  background-color: #4CAF50;
-  border: none;
+  background-color: #0066ff;
+  border: 1px solid black;
   color: white;
-  width: 150px;
-  height: 45px;
+  padding: 10px 25px;
   text-align: center;
+  text-decoration: none;
+  display: inline-block;
   font-size: 16px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+#download-button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
   cursor: pointer;
 }

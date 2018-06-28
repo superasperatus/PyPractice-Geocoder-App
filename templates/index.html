@@ -11,8 +11,8 @@
 
     <body>
       <div class="container">
-          <h1> Geo-Coding your addresses </h1>
-          <h3> Please attach a file that contains your addresses </h3>
+          <h1> Geo-Coding your Addresses </h1>
+          <h2> Please attach a file that contains addresses you wish to geocode </h3>
           <div class="message">
             {{text | safe}}
           </div>
@@ -20,8 +20,13 @@
             <input type="file" name="file" > <br>
             <button type="submit"> Submit </button>
           </form>
-          </div>
-
+          <div class="expl-note">
+              <h3> A note: </h3>
+              <p id="notes"> Upload a .csv file that includes a column 'Addresses'. <br>
+                The app will proces the file and attach longitude and lattitude as new columns. <br>
+                Addresses should have following format: Street number, Street, City, State/Country, Zip-code. <br>
+              </p>
+            </div>
+        </div>
     </body>
-
 </html>
