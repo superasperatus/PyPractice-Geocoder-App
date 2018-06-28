@@ -21,7 +21,6 @@ def processed_data():
     df["Latitude"]=df["Coordinates"].apply(lambda x: x.latitude if x != None else 'Cannot Read Address Format')
     df["Longitude"]=df["Coordinates"].apply(lambda x: x.longitude if x != None else 'Cannot Read Address Format')
     df.drop("Coordinates", axis=1, inplace=True)
-    print("jebga prekid")
     return render_template("success.html")
 
 
