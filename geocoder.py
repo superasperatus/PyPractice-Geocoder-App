@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request, Response, send_file
-from werkzeug import secure_filename
 import pandas
 from geopy.geocoders import Nominatim
-import os
+
 
 app=Flask(__name__)
 
@@ -26,7 +25,6 @@ def processed_data():
 
 @app.route("/download", methods=['POST', 'GET'])
 def download():
-    print(type(upl_file))
     return send_file(upl_file, attachment_filename="processed-file.csv", as_attachment=True)
 
 if __name__=='__main__':
