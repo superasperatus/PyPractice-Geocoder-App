@@ -7,7 +7,7 @@ import os
 
 app=Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:Jebonja2018@localhost/geo-coder'   #configuring the database connection; with the one I create in pg4
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:standardna18ka@localhost/geo-coder'   #configuring the database connection; with the one I create in pg4
 db=SQLAlchemy(app) #creats an SQL alchemy object
 
 #for future: you need to create the db by importing 'from geocoder import db' and then running db.create_all() in cmd
@@ -28,7 +28,7 @@ def index():
 
 #TO DO:
 #files-uploading-and downloading works like a charm!!!
-#connect the project to github and work on it from there as well. 
+#connect the project to github and work on it from there as well.
 #Go through tutorials and find where he manipulates files and creates longitude and lattitude from CSV
 #make it look nice through some peachy css
 
